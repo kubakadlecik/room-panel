@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jacob Room Panel</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#090909;
+    color:white;
+    overflow:hidden;
+}
+
+.bg{
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:
+    radial-gradient(circle at top,#00ffcc22,transparent 40%),
+    radial-gradient(circle at bottom,#0099ff22,transparent 40%);
+    filter:blur(50px);
+    z-index:-1;
+}
+
+.container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.card{
+    width:340px;
+    background:#111;
+    border:1px solid #00ffcc44;
+    border-radius:20px;
+    padding:25px;
+    box-shadow:0 0 25px #00ffcc22;
+}
+
+h1{
+    color:#00ffcc;
+    margin-top:0;
+}
+
+.subtitle{
+    color:#888;
+    margin-bottom:20px;
+}
+
+.btn{
+    display:block;
+    width:100%;
+    padding:15px;
+    margin-top:12px;
+    border:none;
+    border-radius:12px;
+    background:#1b1b1b;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.2s;
+}
+
+.btn:hover{
+    background:#00ffcc22;
+    transform:scale(1.03);
+}
+
+.page{
+    display:none;
+}
+
+.footer{
+    text-align:center;
+    margin-top:20px;
+    color:#666;
+    font-size:12px;
+}
+
+a{
+    color:#00ffcc;
+    text-decoration:none;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="bg"></div>
+
+<div class="container">
+
+<div class="card">
+
+<div id="home">
+
+<h1>⚡ ROOM ACCESS</h1>
+<div class="subtitle">
+Digitální panel mého pokoje
+</div>
+
+<button class="btn" onclick="showPage('contacts')">
+📱 Kontakty
+</button>
+
+<button class="btn" onclick="showPage('wifi')">
+📶 Wi-Fi našeho domu
+</button>
+
+<div class="footer">
+NFC Connected • Access Granted
+</div>
+
+</div>
+
+<div id="contacts" class="page">
+
+<h1>📱 Kontakty</h1>
+
+<p>
+Telefon:<br>
+<b>732 308 204</b>
+</p>
+
+<p>
+Instagram:<br>
+<a href="https://www.instagram.com/kuba.kadlecik/" target="_blank">
+@kuba.kadlecik
+</a>
+</p>
+
+<p>
+Email:<br>
+<b>kuba.kadlecik@gmail.com</b>
+</p>
+
+<button class="btn" onclick="showPage('home')">
+⬅ Zpět
+</button>
+
+</div>
+
+<div id="wifi" class="page">
+
+<h1>📶 Wi-Fi</h1>
+
+<p>
+Název sítě:<br>
+<b>PRBGYEHXED</b>
+</p>
+
+<button class="btn" onclick="showPage('home')">
+⬅ Zpět
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function showPage(page){
+
+document.getElementById("home").style.display="none";
+document.getElementById("contacts").style.display="none";
+document.getElementById("wifi").style.display="none";
+
+document.getElementById(page).style.display="block";
+
+}
+
+showPage("home");
+
+</script>
+
+</body>
+</html>
