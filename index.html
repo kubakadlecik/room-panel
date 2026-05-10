@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jacob Room Panel</title>
+<title>Room Panel</title>
 
 <style>
 
@@ -87,6 +87,13 @@ a{
     text-decoration:none;
 }
 
+.qr{
+    margin-top:15px;
+    display:block;
+    width:180px;
+    height:180px;
+}
+
 </style>
 </head>
 
@@ -98,6 +105,7 @@ a{
 
 <div class="card">
 
+<!-- HOME -->
 <div id="home">
 
 <h1>⚡ ROOM ACCESS</h1>
@@ -110,7 +118,7 @@ Digitální panel mého pokoje
 </button>
 
 <button class="btn" onclick="showPage('wifi')">
-📶 Wi-Fi našeho domu
+📶 Wi-Fi
 </button>
 
 <div class="footer">
@@ -119,31 +127,26 @@ NFC Connected • Access Granted
 
 </div>
 
+<!-- CONTACTS -->
 <div id="contacts" class="page">
 
 <h1>📱 Kontakty</h1>
 
-<p>
-Telefon:<br>
-<b>732 308 204</b>
-</p>
+<p>Telefon:<br><b>732 308 204</b></p>
 
-<p>
-Instagram:<br>
+<p>Instagram:<br>
 <a href="https://www.instagram.com/kuba.kadlecik/" target="_blank">
 @kuba.kadlecik
 </a>
 </p>
 
-<p>
-Email:<br>
-<b>kuba.kadlecik@gmail.com</b>
-</p>
+<p>Email:<br><b>kuba.kadlecik@gmail.com</b></p>
 
-<button class="btn" onclick="showPage('home')">
-⬅ Zpět
-</button>
+<button class="btn" onclick="showPage('home')">⬅ Zpět</button>
 
+</div>
+
+<!-- WIFI -->
 <div id="wifi" class="page">
 
 <h1>📶 Wi-Fi</h1>
@@ -157,6 +160,11 @@ Název sítě:<br>
 Heslo Wi-Fi:<br>
 <b>PRBGYEHXED</b>
 </p>
+
+<p>QR pro připojení:</p>
+
+<img class="qr"
+src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=WIFI:T:WPA;S:O2-Internet-981;P:PRBGYEHXED;;">
 
 <button class="btn" onclick="showPage('home')">
 ⬅ Zpět
